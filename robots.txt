@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cardinal-landscaping.pages.dev/sitemap.xml
