@@ -1,673 +1,384 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://cardinal-landscaping.pages.dev/">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Landscaping, Tree Removal & Hardscaping Knoxville TN | Cardinal Landscaping</title>
-  <meta name="description" content="Cardinal Landscaping provides landscaping, tree removal, hardscaping, patio installation and renovation, and planting services in Knoxville and East Tennessee. Request a free estimate today." />
-  <meta name="keywords" content="landscaping Knoxville TN, tree removal Knoxville, hardscaping Knoxville, patio installation Knoxville, patio renovation Knoxville, planting services Knoxville, Cardinal Landscaping" />
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
+  <title>Cardinal Landscaping | Knoxville Landscaping &amp; Outdoor Living</title>
+  <meta name="description" content="Cardinal Landscaping creates beautiful, practical outdoor spaces for homeowners across Knoxville and East Tennessee. Landscaping, hardscaping, tree work, patios, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet">
   <style>
     :root {
-      --cardinal-red: #b11226;
-      --cardinal-dark: #5f0b18;
-      --cardinal-deep: #31060c;
-      --cardinal-soft: #fff3f5;
-      --cardinal-green: #2f6f3e;
+      --ink: #17201a;
+      --forest: #24382b;
+      --cream: #f4f0e7;
+      --paper: #fbfaf6;
+      --red: #9f1d2e;
+      --red-dark: #741321;
+      --line: rgba(23, 32, 26, .18);
     }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      background: var(--cardinal-red);
-      color: #fff;
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
     }
-
-    .hero {
-      background:
-              radial-gradient(900px 500px at 15% 0%, rgba(255,255,255,.16), transparent 60%),
-              radial-gradient(800px 520px at 85% 10%, rgba(49,6,12,.45), transparent 55%),
-              linear-gradient(135deg, var(--cardinal-red), var(--cardinal-dark));
-      color: #fff;
-    }
-
-    .glass-panel {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.14);
-      backdrop-filter: blur(10px);
-    }
-
+    img { display: block; width: 100%; }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    .shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+    .serif { font-family: "Playfair Display", serif; font-weight: 500; }
     .eyebrow {
-      color: var(--cardinal-red);
+      margin: 0 0 16px;
+      font-size: .74rem;
       font-weight: 700;
-      letter-spacing: .08em;
+      letter-spacing: .18em;
       text-transform: uppercase;
-      font-size: .85rem;
     }
-
-    .hero .eyebrow,
-    .content-card .eyebrow {
-      color: #ffccd3;
-    }
-
-    .btn-cardinal {
-      background: var(--cardinal-red);
-      border-color: var(--cardinal-red);
-      color: #fff;
-    }
-
-    .btn-cardinal:hover {
-      background: #8f0e1f;
-      border-color: #8f0e1f;
-      color: #fff;
-    }
-
-    .btn-outline-cardinal {
-      border-color: var(--cardinal-red);
-      color: var(--cardinal-red);
-    }
-
-    .btn-outline-cardinal:hover {
-      background: var(--cardinal-red);
-      color: #fff;
-    }
-
-    .card-hover {
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-
-    .card-hover:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 1rem 2rem rgba(0,0,0,.15);
-    }
-
-    .service-icon {
-      width: 52px;
-      height: 52px;
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 1rem;
-      background: rgba(177,18,38,.12);
-      color: var(--cardinal-red);
-      font-size: 1.6rem;
-    }
-
-    .trust-strip {
-      background: var(--cardinal-deep);
+      gap: 12px;
+      min-height: 52px;
+      padding: 0 25px;
+      border: 1px solid transparent;
+      background: var(--red);
       color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      transition: .25s ease;
     }
+    .button:hover { background: var(--red-dark); transform: translateY(-2px); }
+    .button.outline { background: transparent; border-color: rgba(255,255,255,.55); }
+    .button.outline:hover { background: #fff; color: var(--ink); }
 
-    .trust-strip .stat {
-      border-right: 1px solid rgba(255,255,255,.14);
+    .site-header {
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 10;
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,.22);
     }
-
-    .trust-strip .stat:last-child {
-      border-right: 0;
-    }
-
-    .bg-landscaping,
-    .bg-hardscaping {
-      min-height: 620px;
+    .nav {
+      min-height: 112px;
       display: flex;
       align-items: center;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand img { width: 82px; height: 82px; object-fit: contain; }
+    .brand-name { display: grid; line-height: 1.05; }
+    .brand-name strong { font-family: "Playfair Display", serif; font-size: 1.45rem; }
+    .brand-name span { margin-top: 6px; font-size: .62rem; letter-spacing: .19em; text-transform: uppercase; opacity: .8; }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a { text-decoration: none; font-size: .9rem; font-weight: 600; }
+    .nav-links a:not(.nav-call):hover { opacity: .7; }
+    .nav-call { padding: 12px 18px; border: 1px solid rgba(255,255,255,.55); }
+    .menu-toggle { display: none; border: 0; background: transparent; color: #fff; font-size: 1.8rem; cursor: pointer; }
+
+    .hero {
+      min-height: 860px;
+      display: grid;
+      align-items: end;
       color: #fff;
+      background:
+        linear-gradient(90deg, rgba(13,22,16,.82) 0%, rgba(13,22,16,.47) 52%, rgba(13,22,16,.15) 100%),
+        linear-gradient(0deg, rgba(13,22,16,.64), transparent 45%),
+        url("images/project Images/485156194_23894635356803899_7988230476543092178_n.jpg") center 43% / cover;
+    }
+    .hero-content { max-width: 850px; padding: 220px 0 100px; }
+    .hero h1 { margin: 0; font-size: clamp(3.6rem, 7.6vw, 7rem); line-height: .94; letter-spacing: -.045em; }
+    .hero h1 em { color: #e8ddd0; }
+    .hero p.lead { max-width: 630px; margin: 28px 0 35px; font-size: clamp(1.05rem, 2vw, 1.3rem); color: rgba(255,255,255,.84); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px 0;
+      border-top: 1px solid rgba(255,255,255,.24);
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
-    .bg-landscaping {
-      background-image:
-              linear-gradient(rgba(95,11,24,.74), rgba(49,6,12,.74)),
-              url("images/landscaping-hero.jpg");
-    }
+    .intro { padding: 120px 0 84px; background: var(--paper); }
+    .intro-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 80px; align-items: start; }
+    .intro h2 { max-width: 760px; margin: 0; font-size: clamp(2.8rem, 5.6vw, 5.4rem); line-height: 1.02; letter-spacing: -.04em; }
+    .intro-copy { max-width: 540px; margin-left: auto; }
+    .intro-copy p { margin: 0 0 24px; font-size: 1.08rem; color: #536057; }
+    .text-link { display: inline-block; padding-bottom: 5px; border-bottom: 1px solid currentColor; color: var(--red); text-decoration: none; font-weight: 700; }
 
-    .bg-hardscaping {
-      background-image:
-              linear-gradient(rgba(95,11,24,.74), rgba(49,6,12,.74)),
-              url("images/hardscaping-patio.jpg");
-    }
-
-    .content-card {
-      max-width: 720px;
-      background: rgba(16,24,32,.82);
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 1.25rem;
-      padding: clamp(1.5rem, 3vw, 2.5rem);
-      box-shadow: 0 1rem 2rem rgba(0,0,0,.25);
-    }
-
-    .content-card p,
-    .content-card li {
-      color: rgba(255,255,255,.84);
-    }
-
-    .feature-image {
-      width: 100%;
-      min-height: 360px;
-      object-fit: cover;
-      border-radius: 1.25rem;
-      box-shadow: 0 1rem 2rem rgba(15,23,42,.16);
-    }
-
-    .review-card {
-      border: 0;
-      border-radius: 1.25rem;
-      box-shadow: 0 1rem 2rem rgba(15,23,42,.1);
-    }
-
-    .review-stars {
-      color: #ffc107;
-      letter-spacing: .08em;
-    }
-
-    .map-frame {
-      width: 100%;
-      min-height: 380px;
-      border: 0;
-      border-radius: 1.25rem;
-      box-shadow: 0 1rem 2rem rgba(15,23,42,.12);
-    }
-
-    .file-help {
-      font-size: .875rem;
-      color: #6c757d;
-    }
-
-    .form-success {
-      display: none;
-      background: #dcfce7;
-      border: 1px solid #86efac;
-      color: #166534;
-      border-radius: 1rem;
-      padding: 1rem 1.25rem;
-      margin-bottom: 1.25rem;
-      font-weight: 600;
-    }
-
-    section.bg-body-tertiary,
-    section.bg-white,
-    section#contact {
-      background: linear-gradient(135deg, var(--cardinal-red), var(--cardinal-dark)) !important;
+    .projects { padding: 0 0 120px; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .project-card {
+      position: relative;
+      min-height: 610px;
+      overflow: hidden;
       color: #fff;
+      text-decoration: none;
+      background: #222;
     }
+    .project-card.wide { grid-column: 1 / -1; min-height: 680px; }
+    .project-card img { position: absolute; inset: 0; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .project-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,16,12,.82), transparent 58%); }
+    .project-card:hover img { transform: scale(1.035); }
+    .project-info { position: absolute; z-index: 1; inset: auto 42px 38px; }
+    .project-info span { font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; }
+    .project-info h3 { max-width: 620px; margin: 8px 0 0; font-size: clamp(2.1rem, 4vw, 4rem); line-height: 1; }
 
-    section.bg-body-tertiary .eyebrow,
-    section.bg-white .eyebrow,
-    section#contact .eyebrow {
-      color: #ffccd3;
+    .services { padding: 120px 0; color: #fff; background: var(--forest); }
+    .section-head { display: flex; justify-content: space-between; gap: 40px; align-items: end; margin-bottom: 58px; }
+    .section-head h2 { max-width: 700px; margin: 0; font-size: clamp(2.9rem, 5vw, 5rem); line-height: 1; }
+    .section-head p { max-width: 390px; margin: 0; color: rgba(255,255,255,.68); }
+    .service-list { border-top: 1px solid rgba(255,255,255,.23); }
+    .service {
+      display: grid;
+      grid-template-columns: 70px 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+      padding: 34px 0;
+      border-bottom: 1px solid rgba(255,255,255,.23);
     }
+    .service-number { color: #d6b8a9; font-family: "Playfair Display", serif; font-size: 1.4rem; }
+    .service h3 { margin: 0; font-family: "Playfair Display", serif; font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 500; }
+    .service p { margin: 0; color: rgba(255,255,255,.65); }
 
-    section.bg-body-tertiary h2,
-    section.bg-white h2,
-    section#contact h2 {
+    .story { display: grid; grid-template-columns: 1fr 1fr; min-height: 760px; background: var(--cream); }
+    .story-image img { height: 100%; object-fit: cover; }
+    .story-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(60px, 9vw, 130px); }
+    .story-copy h2 { margin: 0 0 30px; font-size: clamp(2.8rem, 5vw, 5rem); line-height: 1; }
+    .story-copy p { color: #566159; font-size: 1.05rem; }
+    .promise { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 35px; background: var(--line); }
+    .promise div { padding: 18px 10px 18px 0; background: var(--cream); }
+    .promise strong { display: block; font-size: 1.35rem; color: var(--red); }
+    .promise span { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+
+    .review { padding: 120px 0; text-align: center; background: var(--paper); }
+    .stars { color: var(--red); letter-spacing: .2em; }
+    blockquote { max-width: 940px; margin: 30px auto; font-family: "Playfair Display", serif; font-size: clamp(2rem, 4vw, 3.8rem); line-height: 1.17; }
+    .review cite { font-style: normal; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+
+    .faq { padding: 110px 0; background: var(--cream); }
+    .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 90px; }
+    .faq h2 { margin: 0; font-size: clamp(3rem, 5vw, 5rem); line-height: 1; }
+    details { border-top: 1px solid var(--line); }
+    details:last-child { border-bottom: 1px solid var(--line); }
+    summary { display: flex; justify-content: space-between; gap: 20px; padding: 26px 0; cursor: pointer; list-style: none; font-weight: 700; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--red); font-size: 1.5rem; font-weight: 400; }
+    details[open] summary::after { content: "−"; }
+    details p { margin: -8px 50px 28px 0; color: #59635b; }
+
+    .cta {
+      position: relative;
+      min-height: 670px;
+      display: grid;
+      place-items: center;
       color: #fff;
+      text-align: center;
+      background:
+        linear-gradient(rgba(23,32,26,.72), rgba(23,32,26,.78)),
+        url("images/project Images/cardJob1_3.jpg") center 54% / cover;
+    }
+    .cta-inner { max-width: 880px; padding: 100px 24px; }
+    .cta h2 { margin: 0 0 32px; font-size: clamp(3.2rem, 7vw, 6.5rem); line-height: .97; }
+
+    footer { padding: 65px 0 30px; color: #fff; background: #101712; }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr .7fr .7fr; gap: 60px; padding-bottom: 55px; }
+    .footer-logo { width: 100px; margin-bottom: 18px; }
+    footer h3 { margin: 0 0 18px; font-family: "Playfair Display", serif; font-size: 1.4rem; }
+    footer p, footer a { color: rgba(255,255,255,.65); }
+    footer a { display: block; margin: 8px 0; text-decoration: none; }
+    footer a:hover { color: #fff; }
+    .copyright { display: flex; justify-content: space-between; gap: 20px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,.16); color: rgba(255,255,255,.45); font-size: .78rem; }
+
+    @media (max-width: 900px) {
+      .nav { min-height: 90px; }
+      .brand img { width: 62px; height: 62px; }
+      .nav-links { display: none; position: absolute; top: 90px; left: 0; right: 0; padding: 24px; background: var(--ink); flex-direction: column; align-items: stretch; }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+      .hero { min-height: 760px; }
+      .intro-grid, .faq-grid { grid-template-columns: 1fr; gap: 35px; }
+      .intro-copy { margin: 0; }
+      .project-card, .project-card.wide { min-height: 520px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 25px; }
+      .service { grid-template-columns: 45px 1fr; }
+      .service p { grid-column: 2; }
+      .story { grid-template-columns: 1fr; }
+      .story-image { height: 520px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
-    section.bg-body-tertiary > .container > .text-center .eyebrow,
-    section.bg-white > .container > .text-center .eyebrow {
-      color: #ffccd3;
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 30px, 1180px); }
+      .brand-name span { display: none; }
+      .brand-name strong { font-size: 1.12rem; }
+      .hero { min-height: 700px; }
+      .hero-content { padding: 170px 0 60px; }
+      .hero h1 { font-size: clamp(3rem, 15vw, 4.5rem); }
+      .hero-foot { flex-direction: column; gap: 8px; }
+      .intro, .services, .review, .faq { padding: 80px 0; }
+      .project-grid { grid-template-columns: 1fr; }
+      .project-card.wide { grid-column: auto; }
+      .project-card, .project-card.wide { min-height: 470px; }
+      .project-info { inset: auto 24px 24px; }
+      .service { grid-template-columns: 36px 1fr; gap: 14px; }
+      .story-image { height: 390px; }
+      .story-copy { padding: 70px 24px; }
+      .promise { grid-template-columns: 1fr; background: transparent; }
+      .footer-grid { grid-template-columns: 1fr; gap: 35px; }
+      .copyright { flex-direction: column; }
     }
-
-    section.bg-body-tertiary .card,
-    section.bg-white .card,
-    section#contact .card {
-      color: #212529;
-    }
-
-    #tree-removal .text-body-secondary,
-    #planting .text-body-secondary,
-    #location .text-body-secondary,
-    #contact .text-body-secondary {
-      color: rgba(255,255,255,.82) !important;
-    }
-
-    #tree-removal .card .text-body-secondary,
-    #planting .card .text-body-secondary,
-    #reviews .card .text-body-secondary,
-    #contact .card .text-body-secondary {
-      color: #6c757d !important;
-    }
-
   </style>
 </head>
 <body>
-
-<div id="site-nav"></div>
-
-<header id="home" class="hero py-5">
-  <div class="container py-4">
-    <div class="row g-4 align-items-center">
-      <div class="col-lg-7">
-        <p class="eyebrow mb-2">Serving Knoxville & Surrounding Counties</p>
-        <h1 class="display-5 fw-bold mb-3">Landscaping, Tree Removal, Hardscaping & Patio Services in Knoxville, TN</h1>
-
-        <p class="lead text-white-50 mb-4">
-          Cardinal Landscaping helps homeowners improve curb appeal, clean up overgrown spaces, remove problem trees, build outdoor living areas, renovate patios, and install beautiful plants that fit East Tennessee yards.
-        </p>
-
-        <div class="d-flex gap-2 flex-wrap">
-          <a class="btn btn-success btn-lg" href="tel:+18655550123">
-            <i class="bi bi-telephone me-1"></i> Call Now
-          </a>
-
-          <a class="btn btn-cardinal btn-lg fw-semibold" href="#contact">
-            Get a Free Quote
-          </a>
-
-          <a class="btn btn-outline-light btn-lg" href="projects.html">
-            View Projects
-          </a>
-        </div>
-      </div>
-
-      <div class="col-lg-5">
-        <div class="glass-panel rounded-4 p-4 shadow">
-          <h2 class="h5 fw-semibold mb-3">Get help with your yard</h2>
-
-          <div class="row g-2">
-            <div class="col-12">
-              <a class="btn btn-outline-light w-100 text-start" href="#landscaping">
-                Landscaping & Yard Cleanup
-              </a>
-            </div>
-
-            <div class="col-12">
-              <a class="btn btn-outline-light w-100 text-start" href="#tree-removal">
-                Tree Removal
-              </a>
-            </div>
-
-            <div class="col-12">
-              <a class="btn btn-outline-light w-100 text-start" href="#hardscaping">
-                Hardscaping & Patio Installation
-              </a>
-            </div>
-
-            <div class="col-12">
-              <a class="btn btn-cardinal w-100 text-start fw-semibold" href="#contact">
-                Request an Estimate
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</header>
-
-<section class="trust-strip py-4">
-  <div class="container">
-    <div class="row g-3 text-center">
-      <div class="col-md-4 stat">
-        <div class="h4 mb-1">Local Service</div>
-        <div class="small text-white-50">Knoxville & East Tennessee</div>
-      </div>
-
-      <div class="col-md-4 stat">
-        <div class="h4 mb-1">Photo Estimates</div>
-        <div class="small text-white-50">Upload a picture with your request</div>
-      </div>
-
-      <div class="col-md-4 stat">
-        <div class="h4 mb-1">Landscaping • Trees • Patios</div>
-        <div class="small text-white-50">Outdoor improvement services</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="py-5 bg-body-tertiary">
-  <div class="container">
-    <div class="text-center mb-5">
-      <p class="eyebrow mb-2">What We Do</p>
-      <h2 class="fw-bold">Outdoor Services for a Better Yard</h2>
-    </div>
-
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 card-hover">
-          <div class="card-body p-4">
-            <span class="service-icon"><i class="bi bi-flower1"></i></span>
-            <h3 class="h5 fw-bold mt-3">Landscaping</h3>
-            <p class="text-body-secondary">Yard cleanup, bed refreshes, mulch, edging, and curb appeal improvements.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 card-hover">
-          <div class="card-body p-4">
-            <span class="service-icon"><i class="bi bi-tree"></i></span>
-            <h3 class="h5 fw-bold mt-3">Tree Removal</h3>
-            <p class="text-body-secondary">Removal of unwanted, damaged, or problem trees to clear and protect your property.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 card-hover">
-          <div class="card-body p-4">
-            <span class="service-icon"><i class="bi bi-bricks"></i></span>
-            <h3 class="h5 fw-bold mt-3">Hardscaping</h3>
-            <p class="text-body-secondary">Walkways, stone features, retaining accents, borders, and outdoor structure upgrades.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 card-hover">
-          <div class="card-body p-4">
-            <span class="service-icon"><i class="bi bi-grid"></i></span>
-            <h3 class="h5 fw-bold mt-3">Patio Installation</h3>
-            <p class="text-body-secondary">New patio spaces designed for relaxing, grilling, entertaining, and outdoor living.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 card-hover">
-          <div class="card-body p-4">
-            <span class="service-icon"><i class="bi bi-tools"></i></span>
-            <h3 class="h5 fw-bold mt-3">Patio Renovation</h3>
-            <p class="text-body-secondary">Refresh aging patios with repairs, updated layouts, cleaner edges, and improved usability.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 card-hover">
-          <div class="card-body p-4">
-            <span class="service-icon"><i class="bi bi-flower2"></i></span>
-            <h3 class="h5 fw-bold mt-3">Planting Services</h3>
-            <p class="text-body-secondary">Shrubs, plants, seasonal color, and landscape bed layouts that fit your home.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="landscaping" class="bg-landscaping py-5">
-  <div class="container">
-    <div class="content-card">
-      <p class="eyebrow mb-2">Landscaping</p>
-      <h2 class="fw-bold mb-3">Clean, Sharp, Professional Outdoor Spaces</h2>
-      <p class="mb-4">From overgrown beds to full yard refreshes, Cardinal Landscaping can help make your property look cleaner, healthier, and easier to enjoy.</p>
-      <a class="btn btn-cardinal btn-lg fw-semibold" href="#contact">
-        Get a Free Quote
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="#home" aria-label="Cardinal Landscaping home">
+        <img src="images/cardinal_logo.png" alt="Cardinal Landscaping logo">
+        <span class="brand-name"><strong>Cardinal Landscaping</strong><span>Knoxville, Tennessee</span></span>
       </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQs</a>
+        <a class="nav-call" href="tel:+18652978983">(865) 297-8983</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="tree-removal" class="py-5 bg-body-tertiary">
-  <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-6">
-        <img src="images/tree-removal.jpg" alt="Tree removal and yard cleanup" class="feature-image">
-      </div>
-
-      <div class="col-lg-6">
-        <p class="eyebrow mb-2">Tree Removal</p>
-        <h2 class="fw-bold mb-3">Remove Problem Trees and Clear Your Property</h2>
-        <p class="text-body-secondary">Whether a tree is damaged, unwanted, too close to your outdoor space, or blocking a future project, Cardinal Landscaping can help clear the area and prepare your yard for what comes next.</p>
-
-        <div class="d-flex gap-2 flex-wrap mt-4">
-          <a class="btn btn-cardinal btn-lg" href="#contact">Request Tree Service</a>
-          <a class="btn btn-outline-secondary btn-lg" href="projects.html">See Project Photos</a>
+  <main>
+    <section class="hero" id="home">
+      <div class="shell">
+        <div class="hero-content">
+          <p class="eyebrow">Landscaping and outdoor living in Knoxville, TN</p>
+          <h1 class="serif">Your yard, made <em>remarkable.</em></h1>
+          <p class="lead">Thoughtful landscaping, reliable tree work, and lasting outdoor spaces built for the way you live.</p>
+          <div class="hero-actions">
+            <a class="button" href="tel:+18652978983">Start Your Project <span>→</span></a>
+            <a class="button outline" href="#projects">Explore Our Work</a>
+          </div>
         </div>
+        <div class="hero-foot"><span>Serving Knoxville and East Tennessee</span><span>Scroll to explore ↓</span></div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="hardscaping" class="bg-hardscaping py-5">
-  <div class="container">
-    <div class="content-card ms-lg-auto">
-      <p class="eyebrow mb-2">Hardscaping & Patios</p>
-      <h2 class="fw-bold mb-3">Patio Installation, Renovation & Hardscape Features</h2>
-      <p class="mb-4">Create a more useful backyard with patio spaces, stone details, borders, walkways, and hardscape upgrades that make your outdoor area feel finished.</p>
-
-      <div class="row g-3">
-        <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>New patio installation</div>
-        <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Patio renovation</div>
-        <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Walkways & borders</div>
-        <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Stone & hardscape accents</div>
-      </div>
-
-      <a class="btn btn-cardinal btn-lg fw-semibold mt-4" href="#contact">
-        Request Patio Service
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="planting" class="py-5 bg-white">
-  <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-6">
-        <p class="eyebrow mb-2">Planting Services</p>
-        <h2 class="fw-bold mb-3">Plants, Shrubs and Beds That Add Curb Appeal</h2>
-        <p class="text-body-secondary">Fresh planting can transform the front of a home, soften outdoor spaces, and add seasonal color. Cardinal Landscaping can help with plant selection, placement, and installation.</p>
-
-        <div class="row g-3 mt-2">
-          <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Shrub installation</div>
-          <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Flower beds</div>
-          <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Mulch refreshes</div>
-          <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Seasonal planting</div>
-        </div>
-
-        <a class="btn btn-outline-cardinal btn-lg mt-4" href="#contact">Plan My Planting Project</a>
-      </div>
-
-      <div class="col-lg-6">
-        <img src="images/planting-services.jpg" alt="Planting services and landscape beds" class="feature-image">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="reviews" class="py-5 bg-body-tertiary">
-  <div class="container text-center">
-    <p class="eyebrow mb-2">Reviews</p>
-    <h2 class="fw-bold mb-4">Trusted by East Tennessee Homeowners</h2>
-
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4">
-        <div class="card review-card shadow-sm h-100">
-          <div class="card-body">
-            <div class="review-stars fs-4 mb-2">★★★★★</div>
-            <p class="text-body-secondary">Great communication, clean work, and the yard looks better than expected.</p>
+    <section class="intro">
+      <div class="shell intro-grid">
+        <p class="eyebrow">Outdoor spaces, done right</p>
+        <div>
+          <h2 class="serif">We turn overlooked yards into places worth coming home to.</h2>
+          <div class="intro-copy">
+            <p>From clean, tailored landscapes to patios and complete yard transformations, Cardinal brings care, craftsmanship, and clear communication to every project.</p>
+            <a class="text-link" href="#services">See what we do →</a>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="col-md-4">
-        <div class="card review-card shadow-sm h-100">
-          <div class="card-body">
-            <div class="review-stars fs-4 mb-2">★★★★★</div>
-            <p class="text-body-secondary">Quick response and quality landscaping service.</p>
-          </div>
+    <section class="projects" id="projects" aria-label="Featured projects">
+      <div class="shell project-grid">
+        <a class="project-card wide" href="tel:+18652978983">
+          <img src="images/project Images/cardJob1_3.jpg" alt="Fresh lawn and landscaped beds surrounding a brick home">
+          <div class="project-info"><span>Landscape renewal</span><h3 class="serif">A polished first impression</h3></div>
+        </a>
+        <a class="project-card" href="tel:+18652978983">
+          <img src="images/project Images/cardJob4_4.jpg" alt="Circular paver patio with fire pit">
+          <div class="project-info"><span>Hardscaping</span><h3 class="serif">Gather around</h3></div>
+        </a>
+        <a class="project-card" href="tel:+18652978983">
+          <img src="images/project Images/cardJob2_1.jpg" alt="Manicured green lawn and garden beds">
+          <div class="project-info"><span>Lawn and beds</span><h3 class="serif">Clean lines, lush results</h3></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="eyebrow">Our services</p><h2 class="serif">Everything your outdoor space needs.</h2></div>
+          <p>Practical improvements and complete transformations, delivered by a local crew that respects your home.</p>
+        </div>
+        <div class="service-list">
+          <article class="service"><span class="service-number">01</span><h3>Landscape Design &amp; Installation</h3><p>Planting, bed design, mulch, grading, drainage solutions, and complete landscape refreshes.</p></article>
+          <article class="service"><span class="service-number">02</span><h3>Patios &amp; Hardscaping</h3><p>Paver patios, walkways, fire pit areas, retaining features, and inviting outdoor living spaces.</p></article>
+          <article class="service"><span class="service-number">03</span><h3>Tree &amp; Shrub Care</h3><p>Removal, pruning, shaping, cleanup, and responsible care for overgrown or problem trees.</p></article>
+          <article class="service"><span class="service-number">04</span><h3>Property Cleanups</h3><p>Seasonal cleanup, brush removal, bed restoration, and the finishing work that brings a yard back to life.</p></article>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="location" class="py-5 bg-white">
-  <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-5">
-        <p class="eyebrow mb-2">Service Area</p>
-        <h2 class="fw-bold">Local Landscaping Service Near Knoxville</h2>
-        <p class="text-body-secondary">Serving Knoxville and surrounding East Tennessee communities.</p>
-      </div>
-
-      <div class="col-lg-7">
-        <iframe class="map-frame" loading="lazy" src="https://www.google.com/maps?q=Knoxville%20TN&output=embed"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="py-5">
-  <div class="container">
-    <div class="row g-4 align-items-start">
-      <div class="col-lg-5">
-        <p class="eyebrow mb-2">Contact</p>
-        <h2 class="fw-bold">Request an estimate</h2>
-        <p class="text-body-secondary">Tell us what you need help with and upload a photo if you have one.</p>
-      </div>
-
-      <div class="col-lg-7">
-        <div class="card shadow-sm border-0">
-          <div class="card-body p-4">
-
-            <div id="formSuccess" class="form-success">
-              <i class="bi bi-check-circle-fill me-2"></i>
-              Thanks! We received your request and will contact you as soon as possible.
-            </div>
-
-            <form id="contactForm" class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label">Name</label>
-                <input class="form-control" name="name" autocomplete="name" required>
-              </div>
-
-              <div class="col-md-6">
-                <label class="form-label">Phone</label>
-                <input class="form-control" name="phone" autocomplete="tel" required>
-              </div>
-
-              <div class="col-md-6">
-                <label class="form-label">Email</label>
-                <input class="form-control" type="email" name="email" autocomplete="email">
-              </div>
-
-              <div class="col-md-6">
-                <label class="form-label">Service Needed</label>
-                <select class="form-select" name="service">
-                  <option>Landscaping</option>
-                  <option>Tree Removal</option>
-                  <option>Hardscaping</option>
-                  <option>Patio Installation</option>
-                  <option>Patio Renovation</option>
-                  <option>Planting Services</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div class="col-12">
-                <label class="form-label">Upload a Photo (optional)</label>
-                <input id="projectPhoto" class="form-control" type="file" name="photo" accept="image/jpeg,image/png,image/webp">
-                <div class="file-help mt-1">Accepted: JPG, PNG, WEBP • Max size 5MB</div>
-              </div>
-
-              <div class="col-12">
-                <label class="form-label">Message</label>
-                <textarea class="form-control" name="message" rows="5"></textarea>
-              </div>
-
-              <div class="col-12 d-flex gap-2 flex-wrap">
-                <button id="submitBtn" class="btn btn-cardinal btn-lg" type="submit">
-                  <i class="bi bi-send me-1"></i> Send Request
-                </button>
-
-                <a class="btn btn-outline-secondary btn-lg" href="tel:+18655550123">
-                  <i class="bi bi-telephone me-1"></i> Call Instead
-                </a>
-              </div>
-            </form>
-          </div>
+    <section class="story" id="about">
+      <div class="story-image"><img src="images/project Images/485156194_23894635356803899_7988230476543092178_n.jpg" alt="Finished landscaping around a Knoxville home"></div>
+      <div class="story-copy">
+        <p class="eyebrow">The Cardinal difference</p>
+        <h2 class="serif">Good work starts with listening.</h2>
+        <p>We take the time to understand how you want your property to look, feel, and function. Then we show up, keep you informed, and build it with the same attention we would give our own home.</p>
+        <p>It is a straightforward approach, and it makes all the difference.</p>
+        <div class="promise">
+          <div><strong>Local</strong><span>Knoxville based</span></div>
+          <div><strong>Clear</strong><span>Honest communication</span></div>
+          <div><strong>Built</strong><span>With lasting care</span></div>
         </div>
       </div>
+    </section>
+
+    <section class="review">
+      <div class="shell">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Reliable, hardworking, and the finished yard looked better than we imagined.”</blockquote>
+        <cite>Cardinal Landscaping customer · Knoxville, TN</cite>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="shell faq-grid">
+        <div><p class="eyebrow">Common questions</p><h2 class="serif">Before we get to work.</h2></div>
+        <div>
+          <details><summary>What areas do you serve?</summary><p>We serve Knoxville and surrounding communities throughout East Tennessee. Call us with your address and we will quickly confirm availability.</p></details>
+          <details><summary>Do you provide free estimates?</summary><p>Yes. We will discuss your goals, take a look at the property, and provide a clear estimate before work begins.</p></details>
+          <details><summary>Can you handle both landscaping and hardscaping?</summary><p>Yes. Our work ranges from planting, beds, cleanup, and tree care to patios, walkways, fire pits, and broader outdoor transformations.</p></details>
+          <details><summary>How do I get started?</summary><p>Call Cardinal at (865) 297-8983. Tell us what you have in mind and we will arrange the next step.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="cta-inner">
+        <p class="eyebrow">Ready when you are</p>
+        <h2 class="serif">Let’s make more of your outdoors.</h2>
+        <a class="button" href="tel:+18652978983">Call (865) 297-8983 <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <div class="footer-grid">
+        <div>
+          <img class="footer-logo" src="images/cardinal_logo.png" alt="">
+          <h3>Cardinal Landscaping</h3>
+          <p>Landscaping, tree work, hardscaping, patios, and outdoor improvements in Knoxville, Tennessee.</p>
+        </div>
+        <div><h3>Explore</h3><a href="#services">Services</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#faq">FAQs</a></div>
+        <div><h3>Get in touch</h3><a href="tel:+18652978983">(865) 297-8983</a><a href="https://www.facebook.com/profile.php?id=100064487838238" target="_blank" rel="noopener">Facebook</a><a href="https://www.google.com/maps/search/knoxville" target="_blank" rel="noopener">Knoxville, TN</a></div>
+      </div>
+      <div class="copyright"><span>© <span id="year"></span> Cardinal Landscaping. All rights reserved.</span><span>Built for East Tennessee outdoors.</span></div>
     </div>
-  </div>
-</section>
-
-<div id="site-footer"></div>
-
-<script src="site.js"></script>
-
-<script>
-  const form = document.getElementById("contactForm");
-  const submitBtn = document.getElementById("submitBtn");
-  const successMessage = document.getElementById("formSuccess");
-  const maxUploadSize = 5 * 1024 * 1024;
-
-  function fileToBase64(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const result = String(reader.result || "");
-        resolve(result.split(",")[1] || "");
-      };
-      reader.onerror = reject;
-      reader.readAsDataURL(file);
-    });
-  }
-
-  form?.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    successMessage.style.display = "none";
-
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = 'Sending...';
-
-    const data = Object.fromEntries(new FormData(form).entries());
-    const photo = document.getElementById("projectPhoto")?.files?.[0];
-
-    try {
-      if (photo) {
-        if (photo.size > maxUploadSize) {
-          throw new Error("Please upload an image smaller than 5MB.");
-        }
-
-        data.attachment = {
-          filename: photo.name,
-          contentType: photo.type,
-          content: await fileToBase64(photo)
-        };
-      }
-
-      delete data.photo;
-
-      const res = await fetch("https://lively-river-3bf0.cloverhillking77.workers.dev", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-
-      if (!res.ok) {
-        throw new Error("Form submission failed.");
-      }
-
-      form.reset();
-
-      successMessage.style.display = "block";
-
-      window.scrollTo({
-        top: form.offsetTop - 140,
-        behavior: "smooth"
-      });
-
-    } catch (err) {
-      alert(err.message || "Something went wrong.");
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<i class="bi bi-send me-1"></i> Send Request';
-    }
-  });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </footer>
+  <script src="site.js"></script>
 </body>
 </html>
