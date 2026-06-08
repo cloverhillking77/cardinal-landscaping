@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a Landscaping Estimate | Cardinal Landscaping Knoxville</title>
+  <meta name="description" content="Request a free landscaping estimate from Cardinal Landscaping in Knoxville, TN. Tell us about your lawn, hardscaping, landscape renewal, or tree and shrub project.">
+  <link rel="canonical" href="https://cardinal-landscaping.pages.dev/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Request an Estimate | Cardinal Landscaping">
+  <meta property="og:description" content="Tell Cardinal Landscaping about your Knoxville outdoor project and request a free estimate.">
+  <meta property="og:url" content="https://cardinal-landscaping.pages.dev/contact.html">
+  <meta property="og:image" content="https://cardinal-landscaping.pages.dev/images/project%20Images/cardJob1_4.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="contact.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Request a Landscaping Estimate",
+      "url": "https://cardinal-landscaping.pages.dev/contact.html",
+      "mainEntity": {
+        "@type": "LandscapingBusiness",
+        "name": "Cardinal Landscaping",
+        "telephone": "+1-865-297-8983",
+        "areaServed": "Knoxville, Tennessee"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="index.html" aria-label="Cardinal Landscaping home">
+        <img src="images/cardinal_logo.png" alt="Cardinal Landscaping logo">
+        <span class="brand-name"><strong>Cardinal Landscaping</strong><span>Knoxville, Tennessee</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <div class="service-menu">
+          <button class="service-menu-button" type="button" aria-expanded="false">Our Services</button>
+          <div class="service-submenu">
+            <a href="lawn-and-beds.html">Lawn &amp; Beds</a>
+            <a href="hardscaping.html">Hardscaping</a>
+            <a href="landscape-renewal.html">Landscape Renewal</a>
+            <a href="tree-and-shrub-care.html">Tree &amp; Shrub Care</a>
+          </div>
+        </div>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#about">About</a>
+        <a class="nav-call" href="contact.html" aria-current="page">Request an Estimate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contact-hero">
+    <div class="shell contact-grid">
+      <section class="contact-intro">
+        <p class="eyebrow">Let’s talk about your property</p>
+        <h1 class="serif">Start your outdoor project.</h1>
+        <p class="lead">Tell us what you would like to improve and include a photo if it helps. We’ll review your request and follow up to discuss the next step.</p>
+        <div class="contact-detail">
+          <div><span>Prefer to call?</span><a href="tel:+18652978983">(865) 297-8983</a></div>
+        </div>
+        <div class="contact-detail">
+          <div><span>Service area</span><strong>Knoxville &amp; East Tennessee</strong></div>
+        </div>
+      </section>
+
+      <section class="form-card" aria-labelledby="form-heading">
+        <p class="eyebrow">Free estimate request</p>
+        <h2 class="serif" id="form-heading">Tell us what you need.</h2>
+        <p class="form-note">Fields marked with an asterisk are required.</p>
+
+        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+
+        <!-- Add your Make webhook URL to data-endpoint after the scenario is ready. -->
+        <form id="contactForm" data-endpoint="" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Name *</label>
+              <input id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone *</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="service">Service Needed *</label>
+              <select id="service" name="service" required>
+                <option value="">Choose a service</option>
+                <option>Lawn &amp; Beds</option>
+                <option>Hardscaping</option>
+                <option>Landscape Renewal</option>
+                <option>Tree &amp; Shrub Care</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="projectPhoto">Upload a Photo (optional)</label>
+              <input id="projectPhoto" type="file" name="photo" accept="image/jpeg,image/png,image/webp">
+              <p class="file-help">Accepted: JPG, PNG, or WEBP. Maximum file size: 5MB.</p>
+            </div>
+            <div class="field full">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" rows="6" placeholder="Tell us about the property, what you would like changed, and your ideal timing."></textarea>
+            </div>
+            <input type="hidden" name="source" value="Cardinal Landscaping website">
+            <input type="hidden" name="page" value="contact">
+            <div class="field full form-actions">
+              <button id="submitBtn" class="submit-button" type="submit">Send Request →</button>
+              <a class="call-button" href="tel:+18652978983">Call Instead</a>
+            </div>
+          </div>
+        </form>
+        <p class="privacy-note">Your information is used only to respond to your estimate request.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="shell footer-line"><span>© <span id="year"></span> Cardinal Landscaping.</span><a href="index.html">Back to home</a></div>
+  </footer>
+  <script src="site.js"></script>
+  <script src="contact.js"></script>
+</body>
+</html>
