@@ -7,7 +7,7 @@ const sitePages = [
 ];
 
 const googleReviewUrl = 'https://www.google.com/searchviewer/10?svid=CAwSGxIZCgNwdnESEkNnc3ZaeTh4ZEdadE4yTnJaZxgK';
-const facebookUrl = 'https://www.facebook.com//';
+const facebookUrl = 'https://www.facebook.com/profile.php?id=100064487838238&sk=photos';
 const googleMapsUrl = 'https://www.google.com/maps/search/knoxville';
 
 function currentPageName() {
