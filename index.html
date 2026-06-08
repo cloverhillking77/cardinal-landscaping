@@ -4,29 +4,32 @@
   <link rel="canonical" href="https://cardinal-landscaping.pages.dev/">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lanscaping, Tree Removal, and More Knoxville TN | Cardinal Landscaping</title>
-  <meta name="description" content="Cunningham Windows provides windows, window repair, replacement windows, glass replacement, screens, doors, and exterior services in Knoxville and East Tennessee. Call (865) 522-0800 for an estimate." />
-  <meta name="keywords" content="window repair Knoxville TN, glass replacement Knoxville, replacement windows Knoxville, window screens Knoxville, door installation Knoxville, door repair Knoxville, Cunningham Windows" />
+  <title>Landscaping, Tree Removal & Hardscaping Knoxville TN | Cardinal Landscaping</title>
+  <meta name="description" content="Cardinal Landscaping provides landscaping, tree removal, hardscaping, patio installation and renovation, and planting services in Knoxville and East Tennessee. Request a free estimate today." />
+  <meta name="keywords" content="landscaping Knoxville TN, tree removal Knoxville, hardscaping Knoxville, patio installation Knoxville, patio renovation Knoxville, planting services Knoxville, Cardinal Landscaping" />
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
     :root {
-      --cw-orange: #ff8200;
-      --cw-dark: #111827;
-      --cw-soft: #f6f7f9;
+      --cardinal-red: #b11226;
+      --cardinal-dark: #5f0b18;
+      --cardinal-deep: #31060c;
+      --cardinal-soft: #fff3f5;
+      --cardinal-green: #2f6f3e;
     }
 
     body {
-      background: #fff;
+      background: var(--cardinal-red);
+      color: #fff;
     }
 
     .hero {
       background:
-        radial-gradient(900px 500px at 15% 0%, rgba(13,110,253,.25), transparent 60%),
-        radial-gradient(800px 520px at 85% 10%, rgba(255,130,0,.18), transparent 55%),
-        #0b1220;
+              radial-gradient(900px 500px at 15% 0%, rgba(255,255,255,.16), transparent 60%),
+              radial-gradient(800px 520px at 85% 10%, rgba(49,6,12,.45), transparent 55%),
+              linear-gradient(135deg, var(--cardinal-red), var(--cardinal-dark));
       color: #fff;
     }
 
@@ -37,11 +40,38 @@
     }
 
     .eyebrow {
-      color: var(--cw-orange);
+      color: var(--cardinal-red);
       font-weight: 700;
       letter-spacing: .08em;
       text-transform: uppercase;
       font-size: .85rem;
+    }
+
+    .hero .eyebrow,
+    .content-card .eyebrow {
+      color: #ffccd3;
+    }
+
+    .btn-cardinal {
+      background: var(--cardinal-red);
+      border-color: var(--cardinal-red);
+      color: #fff;
+    }
+
+    .btn-cardinal:hover {
+      background: #8f0e1f;
+      border-color: #8f0e1f;
+      color: #fff;
+    }
+
+    .btn-outline-cardinal {
+      border-color: var(--cardinal-red);
+      color: var(--cardinal-red);
+    }
+
+    .btn-outline-cardinal:hover {
+      background: var(--cardinal-red);
+      color: #fff;
     }
 
     .card-hover {
@@ -60,13 +90,13 @@
       align-items: center;
       justify-content: center;
       border-radius: 1rem;
-      background: rgba(255,130,0,.12);
-      color: var(--cw-orange);
+      background: rgba(177,18,38,.12);
+      color: var(--cardinal-red);
       font-size: 1.6rem;
     }
 
     .trust-strip {
-      background: #0f172a;
+      background: var(--cardinal-deep);
       color: #fff;
     }
 
@@ -78,8 +108,8 @@
       border-right: 0;
     }
 
-    .bg-windows,
-    .bg-doors {
+    .bg-landscaping,
+    .bg-hardscaping {
       min-height: 620px;
       display: flex;
       align-items: center;
@@ -89,21 +119,21 @@
       color: #fff;
     }
 
-    .bg-windows {
+    .bg-landscaping {
       background-image:
-        linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.58)),
-        url("images/window_hero.jpg");
+              linear-gradient(rgba(95,11,24,.74), rgba(49,6,12,.74)),
+              url("images/landscaping-hero.jpg");
     }
 
-    .bg-doors {
+    .bg-hardscaping {
       background-image:
-        linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-        url("images/projects/doorsMain.png");
+              linear-gradient(rgba(95,11,24,.74), rgba(49,6,12,.74)),
+              url("images/hardscaping-patio.jpg");
     }
 
     .content-card {
       max-width: 720px;
-      background: rgba(8,13,24,.76);
+      background: rgba(16,24,32,.82);
       border: 1px solid rgba(255,255,255,.16);
       border-radius: 1.25rem;
       padding: clamp(1.5rem, 3vw, 2.5rem);
@@ -112,10 +142,10 @@
 
     .content-card p,
     .content-card li {
-      color: rgba(255,255,255,.82);
+      color: rgba(255,255,255,.84);
     }
 
-    .glass-image {
+    .feature-image {
       width: 100%;
       min-height: 360px;
       object-fit: cover;
@@ -157,29 +187,74 @@
       margin-bottom: 1.25rem;
       font-weight: 600;
     }
+
+    section.bg-body-tertiary,
+    section.bg-white,
+    section#contact {
+      background: linear-gradient(135deg, var(--cardinal-red), var(--cardinal-dark)) !important;
+      color: #fff;
+    }
+
+    section.bg-body-tertiary .eyebrow,
+    section.bg-white .eyebrow,
+    section#contact .eyebrow {
+      color: #ffccd3;
+    }
+
+    section.bg-body-tertiary h2,
+    section.bg-white h2,
+    section#contact h2 {
+      color: #fff;
+    }
+
+    section.bg-body-tertiary > .container > .text-center .eyebrow,
+    section.bg-white > .container > .text-center .eyebrow {
+      color: #ffccd3;
+    }
+
+    section.bg-body-tertiary .card,
+    section.bg-white .card,
+    section#contact .card {
+      color: #212529;
+    }
+
+    #tree-removal .text-body-secondary,
+    #planting .text-body-secondary,
+    #location .text-body-secondary,
+    #contact .text-body-secondary {
+      color: rgba(255,255,255,.82) !important;
+    }
+
+    #tree-removal .card .text-body-secondary,
+    #planting .card .text-body-secondary,
+    #reviews .card .text-body-secondary,
+    #contact .card .text-body-secondary {
+      color: #6c757d !important;
+    }
+
   </style>
 </head>
 <body>
 
 <div id="site-nav"></div>
 
-  <header id="home" class="hero py-5">
+<header id="home" class="hero py-5">
   <div class="container py-4">
     <div class="row g-4 align-items-center">
       <div class="col-lg-7">
         <p class="eyebrow mb-2">Serving Knoxville & Surrounding Counties</p>
-        <h1 class="display-5 fw-bold mb-3">Windows, Replacement Windows, Glass Service, & Doors in Knoxville, TN</h1>
+        <h1 class="display-5 fw-bold mb-3">Landscaping, Tree Removal, Hardscaping & Patio Services in Knoxville, TN</h1>
 
         <p class="lead text-white-50 mb-4">
-          From replacement windows and broken glass to screens, seals, doors, and home exterior projects, Cunningham Windows helps homeowners improve comfort, curb appeal, and everyday function.
+          Cardinal Landscaping helps homeowners improve curb appeal, clean up overgrown spaces, remove problem trees, build outdoor living areas, renovate patios, and install beautiful plants that fit East Tennessee yards.
         </p>
 
         <div class="d-flex gap-2 flex-wrap">
-          <a class="btn btn-success btn-lg" href="tel:+18655220800">
+          <a class="btn btn-success btn-lg" href="tel:+18655550123">
             <i class="bi bi-telephone me-1"></i> Call Now
           </a>
 
-          <a class="btn btn-warning btn-lg fw-semibold" href="#contact">
+          <a class="btn btn-cardinal btn-lg fw-semibold" href="#contact">
             Get a Free Quote
           </a>
 
@@ -191,29 +266,29 @@
 
       <div class="col-lg-5">
         <div class="glass-panel rounded-4 p-4 shadow">
-          <h2 class="h5 fw-semibold mb-3">Get help fast</h2>
+          <h2 class="h5 fw-semibold mb-3">Get help with your yard</h2>
 
           <div class="row g-2">
             <div class="col-12">
-              <a class="btn btn-outline-light w-100 text-start" href="#windows">
-                Window Installation & Repairs
+              <a class="btn btn-outline-light w-100 text-start" href="#landscaping">
+                Landscaping & Yard Cleanup
               </a>
             </div>
 
             <div class="col-12">
-              <a class="btn btn-outline-light w-100 text-start" href="#glass">
-                Glass Replacement & Screens
+              <a class="btn btn-outline-light w-100 text-start" href="#tree-removal">
+                Tree Removal
               </a>
             </div>
 
             <div class="col-12">
-              <a class="btn btn-outline-light w-100 text-start" href="#doors">
-                Door Installation & Repairs
+              <a class="btn btn-outline-light w-100 text-start" href="#hardscaping">
+                Hardscaping & Patio Installation
               </a>
             </div>
 
             <div class="col-12">
-              <a class="btn btn-warning w-100 text-start fw-semibold" href="#contact">
+              <a class="btn btn-cardinal w-100 text-start fw-semibold" href="#contact">
                 Request an Estimate
               </a>
             </div>
@@ -239,8 +314,8 @@
       </div>
 
       <div class="col-md-4 stat">
-        <div class="h4 mb-1">Windows • Glass • Doors</div>
-        <div class="small text-white-50">Repair and replacement options</div>
+        <div class="h4 mb-1">Landscaping • Trees • Patios</div>
+        <div class="small text-white-50">Outdoor improvement services</div>
       </div>
     </div>
   </div>
@@ -250,16 +325,16 @@
   <div class="container">
     <div class="text-center mb-5">
       <p class="eyebrow mb-2">What We Do</p>
-      <h2 class="fw-bold">Windows, Glass & Home Exterior Services</h2>
+      <h2 class="fw-bold">Outdoor Services for a Better Yard</h2>
     </div>
 
     <div class="row g-4">
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm border-0 card-hover">
           <div class="card-body p-4">
-            <span class="service-icon"><i class="bi bi-window"></i></span>
-            <h3 class="h5 fw-bold mt-3">Window Installation</h3>
-            <p class="text-body-secondary">Replacement windows and upgrades for comfort and curb appeal.</p>
+            <span class="service-icon"><i class="bi bi-flower1"></i></span>
+            <h3 class="h5 fw-bold mt-3">Landscaping</h3>
+            <p class="text-body-secondary">Yard cleanup, bed refreshes, mulch, edging, and curb appeal improvements.</p>
           </div>
         </div>
       </div>
@@ -267,9 +342,9 @@
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm border-0 card-hover">
           <div class="card-body p-4">
-            <span class="service-icon"><i class="bi bi-grid-3x3"></i></span>
-            <h3 class="h5 fw-bold mt-3">Glass Replacement</h3>
-            <p class="text-body-secondary">Fogged, cracked, or broken glass replacement services.</p>
+            <span class="service-icon"><i class="bi bi-tree"></i></span>
+            <h3 class="h5 fw-bold mt-3">Tree Removal</h3>
+            <p class="text-body-secondary">Removal of unwanted, damaged, or problem trees to clear and protect your property.</p>
           </div>
         </div>
       </div>
@@ -277,9 +352,39 @@
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm border-0 card-hover">
           <div class="card-body p-4">
-            <span class="service-icon"><i class="bi bi-door-open"></i></span>
-            <h3 class="h5 fw-bold mt-3">Doors</h3>
-            <p class="text-body-secondary">Entry doors, patio doors, storm doors, and repairs.</p>
+            <span class="service-icon"><i class="bi bi-bricks"></i></span>
+            <h3 class="h5 fw-bold mt-3">Hardscaping</h3>
+            <p class="text-body-secondary">Walkways, stone features, retaining accents, borders, and outdoor structure upgrades.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0 card-hover">
+          <div class="card-body p-4">
+            <span class="service-icon"><i class="bi bi-grid"></i></span>
+            <h3 class="h5 fw-bold mt-3">Patio Installation</h3>
+            <p class="text-body-secondary">New patio spaces designed for relaxing, grilling, entertaining, and outdoor living.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0 card-hover">
+          <div class="card-body p-4">
+            <span class="service-icon"><i class="bi bi-tools"></i></span>
+            <h3 class="h5 fw-bold mt-3">Patio Renovation</h3>
+            <p class="text-body-secondary">Refresh aging patios with repairs, updated layouts, cleaner edges, and improved usability.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0 card-hover">
+          <div class="card-body p-4">
+            <span class="service-icon"><i class="bi bi-flower2"></i></span>
+            <h3 class="h5 fw-bold mt-3">Planting Services</h3>
+            <p class="text-body-secondary">Shrubs, plants, seasonal color, and landscape bed layouts that fit your home.</p>
           </div>
         </div>
       </div>
@@ -287,33 +392,33 @@
   </div>
 </section>
 
-<section id="windows" class="bg-windows py-5">
+<section id="landscaping" class="bg-landscaping py-5">
   <div class="container">
     <div class="content-card">
-      <p class="eyebrow mb-2">Windows</p>
-      <h2 class="fw-bold mb-3">Better Windows for a Better Home</h2>
-      <p class="mb-4">Whether you need a full window replacement or a focused repair, Cunningham Windows can help restore the look, comfort, and performance of your home.</p>
-      <a class="btn btn-warning btn-lg fw-semibold" href="#contact">
+      <p class="eyebrow mb-2">Landscaping</p>
+      <h2 class="fw-bold mb-3">Clean, Sharp, Professional Outdoor Spaces</h2>
+      <p class="mb-4">From overgrown beds to full yard refreshes, Cardinal Landscaping can help make your property look cleaner, healthier, and easier to enjoy.</p>
+      <a class="btn btn-cardinal btn-lg fw-semibold" href="#contact">
         Get a Free Quote
       </a>
     </div>
   </div>
 </section>
 
-<section id="glass" class="py-5 bg-body-tertiary">
+<section id="tree-removal" class="py-5 bg-body-tertiary">
   <div class="container">
     <div class="row g-5 align-items-center">
       <div class="col-lg-6">
-        <img src="images/projects/20251010_113547.jpg" class="glass-image">
+        <img src="images/tree-removal.jpg" alt="Tree removal and yard cleanup" class="feature-image">
       </div>
 
       <div class="col-lg-6">
-        <p class="eyebrow mb-2">Glass Service</p>
-        <h2 class="fw-bold mb-3">Clear, Clean Glass Replacement</h2>
-        <p class="text-body-secondary">Damaged or cloudy glass can make a home look older and feel less comfortable.</p>
+        <p class="eyebrow mb-2">Tree Removal</p>
+        <h2 class="fw-bold mb-3">Remove Problem Trees and Clear Your Property</h2>
+        <p class="text-body-secondary">Whether a tree is damaged, unwanted, too close to your outdoor space, or blocking a future project, Cardinal Landscaping can help clear the area and prepare your yard for what comes next.</p>
 
         <div class="d-flex gap-2 flex-wrap mt-4">
-          <a class="btn btn-primary btn-lg" href="#contact">Get Glass Help</a>
+          <a class="btn btn-cardinal btn-lg" href="#contact">Request Tree Service</a>
           <a class="btn btn-outline-secondary btn-lg" href="projects.html">See Project Photos</a>
         </div>
       </div>
@@ -321,28 +426,53 @@
   </div>
 </section>
 
-<section id="doors" class="bg-doors py-5">
+<section id="hardscaping" class="bg-hardscaping py-5">
   <div class="container">
     <div class="content-card ms-lg-auto">
-      <p class="eyebrow mb-2">Doors</p>
-      <h2 class="fw-bold mb-3">Door Installation & Repair Services</h2>
-      <p class="mb-4">Upgrade the look, security, and energy efficiency of your home with professional door installation and repair services from Cunningham Windows.</p>
+      <p class="eyebrow mb-2">Hardscaping & Patios</p>
+      <h2 class="fw-bold mb-3">Patio Installation, Renovation & Hardscape Features</h2>
+      <p class="mb-4">Create a more useful backyard with patio spaces, stone details, borders, walkways, and hardscape upgrades that make your outdoor area feel finished.</p>
 
       <div class="row g-3">
-        <div class="col-sm-6"><i class="bi bi-check-circle-fill text-warning me-2"></i>Entry door installation</div>
-        <div class="col-sm-6"><i class="bi bi-check-circle-fill text-warning me-2"></i>Sliding patio doors</div>
-        <div class="col-sm-6"><i class="bi bi-check-circle-fill text-warning me-2"></i>Storm & exterior doors</div>
-        <div class="col-sm-6"><i class="bi bi-check-circle-fill text-warning me-2"></i>Door hardware & repairs</div>
+        <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>New patio installation</div>
+        <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Patio renovation</div>
+        <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Walkways & borders</div>
+        <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Stone & hardscape accents</div>
       </div>
 
-      <a class="btn btn-warning btn-lg fw-semibold mt-4" href="#contact">
-        Request Door Service
+      <a class="btn btn-cardinal btn-lg fw-semibold mt-4" href="#contact">
+        Request Patio Service
       </a>
     </div>
   </div>
 </section>
 
-<section id="reviews" class="py-5 bg-white">
+<section id="planting" class="py-5 bg-white">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <p class="eyebrow mb-2">Planting Services</p>
+        <h2 class="fw-bold mb-3">Plants, Shrubs and Beds That Add Curb Appeal</h2>
+        <p class="text-body-secondary">Fresh planting can transform the front of a home, soften outdoor spaces, and add seasonal color. Cardinal Landscaping can help with plant selection, placement, and installation.</p>
+
+        <div class="row g-3 mt-2">
+          <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Shrub installation</div>
+          <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Flower beds</div>
+          <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Mulch refreshes</div>
+          <div class="col-sm-6"><i class="bi bi-check-circle-fill text-danger me-2"></i>Seasonal planting</div>
+        </div>
+
+        <a class="btn btn-outline-cardinal btn-lg mt-4" href="#contact">Plan My Planting Project</a>
+      </div>
+
+      <div class="col-lg-6">
+        <img src="images/planting-services.jpg" alt="Planting services and landscape beds" class="feature-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="py-5 bg-body-tertiary">
   <div class="container text-center">
     <p class="eyebrow mb-2">Reviews</p>
     <h2 class="fw-bold mb-4">Trusted by East Tennessee Homeowners</h2>
@@ -352,7 +482,7 @@
         <div class="card review-card shadow-sm h-100">
           <div class="card-body">
             <div class="review-stars fs-4 mb-2">★★★★★</div>
-            <p class="text-body-secondary">Professional work, great communication, and clean installation.</p>
+            <p class="text-body-secondary">Great communication, clean work, and the yard looks better than expected.</p>
           </div>
         </div>
       </div>
@@ -361,7 +491,7 @@
         <div class="card review-card shadow-sm h-100">
           <div class="card-body">
             <div class="review-stars fs-4 mb-2">★★★★★</div>
-            <p class="text-body-secondary">Quick response and quality service.</p>
+            <p class="text-body-secondary">Quick response and quality landscaping service.</p>
           </div>
         </div>
       </div>
@@ -369,16 +499,17 @@
   </div>
 </section>
 
-<section id="location" class="py-5 bg-body-tertiary">
+<section id="location" class="py-5 bg-white">
   <div class="container">
     <div class="row g-5 align-items-center">
       <div class="col-lg-5">
         <p class="eyebrow mb-2">Service Area</p>
-        <h2 class="fw-bold">Local Window & Glass Service Near Knoxville</h2>
+        <h2 class="fw-bold">Local Landscaping Service Near Knoxville</h2>
+        <p class="text-body-secondary">Serving Knoxville and surrounding East Tennessee communities.</p>
       </div>
 
       <div class="col-lg-7">
-        <iframe class="map-frame" loading="lazy" src="https://www.google.com/maps?q=Cunningham%20Windows%207514%20Gibbs%20Rd%20Corryton%20TN%2037721&output=embed"></iframe>
+        <iframe class="map-frame" loading="lazy" src="https://www.google.com/maps?q=Knoxville%20TN&output=embed"></iframe>
       </div>
     </div>
   </div>
@@ -390,6 +521,7 @@
       <div class="col-lg-5">
         <p class="eyebrow mb-2">Contact</p>
         <h2 class="fw-bold">Request an estimate</h2>
+        <p class="text-body-secondary">Tell us what you need help with and upload a photo if you have one.</p>
       </div>
 
       <div class="col-lg-7">
@@ -420,9 +552,12 @@
               <div class="col-md-6">
                 <label class="form-label">Service Needed</label>
                 <select class="form-select" name="service">
-                  <option>Windows</option>
-                  <option>Glass Service</option>
-                  <option>Doors</option>
+                  <option>Landscaping</option>
+                  <option>Tree Removal</option>
+                  <option>Hardscaping</option>
+                  <option>Patio Installation</option>
+                  <option>Patio Renovation</option>
+                  <option>Planting Services</option>
                   <option>Other</option>
                 </select>
               </div>
@@ -439,11 +574,11 @@
               </div>
 
               <div class="col-12 d-flex gap-2 flex-wrap">
-                <button id="submitBtn" class="btn btn-primary btn-lg" type="submit">
+                <button id="submitBtn" class="btn btn-cardinal btn-lg" type="submit">
                   <i class="bi bi-send me-1"></i> Send Request
                 </button>
 
-                <a class="btn btn-outline-secondary btn-lg" href="tel:+18655220800">
+                <a class="btn btn-outline-secondary btn-lg" href="tel:+18655550123">
                   <i class="bi bi-telephone me-1"></i> Call Instead
                 </a>
               </div>
@@ -460,77 +595,77 @@
 <script src="assets/js/site.js"></script>
 
 <script>
-const form = document.getElementById("contactForm");
-const submitBtn = document.getElementById("submitBtn");
-const successMessage = document.getElementById("formSuccess");
-const maxUploadSize = 5 * 1024 * 1024;
+  const form = document.getElementById("contactForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const successMessage = document.getElementById("formSuccess");
+  const maxUploadSize = 5 * 1024 * 1024;
 
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const result = String(reader.result || "");
-      resolve(result.split(",")[1] || "");
-    };
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
+  function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const result = String(reader.result || "");
+        resolve(result.split(",")[1] || "");
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
 
-form?.addEventListener("submit", async (e) => {
-  e.preventDefault();
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  successMessage.style.display = "none";
+    successMessage.style.display = "none";
 
-  submitBtn.disabled = true;
-  submitBtn.innerHTML = 'Sending...';
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending...';
 
-  const data = Object.fromEntries(new FormData(form).entries());
-  const photo = document.getElementById("projectPhoto")?.files?.[0];
+    const data = Object.fromEntries(new FormData(form).entries());
+    const photo = document.getElementById("projectPhoto")?.files?.[0];
 
-  try {
-    if (photo) {
-      if (photo.size > maxUploadSize) {
-        throw new Error("Please upload an image smaller than 5MB.");
+    try {
+      if (photo) {
+        if (photo.size > maxUploadSize) {
+          throw new Error("Please upload an image smaller than 5MB.");
+        }
+
+        data.attachment = {
+          filename: photo.name,
+          contentType: photo.type,
+          content: await fileToBase64(photo)
+        };
       }
 
-      data.attachment = {
-        filename: photo.name,
-        contentType: photo.type,
-        content: await fileToBase64(photo)
-      };
+      delete data.photo;
+
+      const res = await fetch("https://lively-river-3bf0.cloverhillking77.workers.dev", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (!res.ok) {
+        throw new Error("Form submission failed.");
+      }
+
+      form.reset();
+
+      successMessage.style.display = "block";
+
+      window.scrollTo({
+        top: form.offsetTop - 140,
+        behavior: "smooth"
+      });
+
+    } catch (err) {
+      alert(err.message || "Something went wrong.");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="bi bi-send me-1"></i> Send Request';
     }
-
-    delete data.photo;
-
-    const res = await fetch("https://lively-river-3bf0.cloverhillking77.workers.dev", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    });
-
-    if (!res.ok) {
-      throw new Error("Form submission failed.");
-    }
-
-    form.reset();
-
-    successMessage.style.display = "block";
-
-    window.scrollTo({
-      top: form.offsetTop - 140,
-      behavior: "smooth"
-    });
-
-  } catch (err) {
-    alert(err.message || "Something went wrong.");
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = '<i class="bi bi-send me-1"></i> Send Request';
-  }
-});
+  });
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
