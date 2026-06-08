@@ -1,8 +1,8 @@
 const sitePages = [
   { href: 'index.html', label: 'Home' },
-  { href: 'window-repair-knoxville.html', label: 'Window Repair' },
-  { href: 'glass-replacement-knoxville.html', label: 'Glass Replacement' },
-  { href: 'projects.html', label: 'Projects' },
+  { href: '', label: 'Landscaping' },
+  { href: '', label: 'Tree Removal' },
+  { href: '', label: 'Projects' },
   { href: 'index.html#contact', label: 'Contact' }
 ];
 
@@ -152,8 +152,8 @@ function renderSiteNav() {
           <img class="cw-brand-logo" src="images/current_logo.png" alt="Cunningham Windows logo">
 
           <div class="cw-brand-text">
-            <span class="cw-brand-title">Cunningham Windows</span>
-            <span class="cw-brand-sub">Windows • Glass • Doors</span>
+            <span class="cw-brand-title">Cardinal Landscaping</span>
+            <span class="cw-brand-sub">Landscaping • Tree Removal • Patios • And More </span>
           </div>
         </a>
 
@@ -181,8 +181,8 @@ function renderSiteFooter() {
 
         <div class="d-flex align-items-center gap-3 text-center text-lg-start">
           <img
-            src="images/current_logo.png"
-            alt="Cunningham Windows logo"
+            src="images/"
+            alt="Cardinal Landscaping logo"
             style="height:72px;width:auto;max-width:180px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35));"
           >
 
