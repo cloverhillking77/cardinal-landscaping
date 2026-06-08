@@ -149,7 +149,7 @@ function renderSiteNav() {
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-dark-subtle">
       <div class="container-fluid px-lg-4">
         <a class="navbar-brand d-flex align-items-center gap-4 cw-brand" href="index.html" aria-label="Cunningham Windows home">
-          <img class="cw-brand-logo" src="images/current_logo.png" alt="Cunningham Windows logo">
+          <img class="cw-brand-logo" src="images/cardinal_logo.png" alt="Cardinal Landscaping logo">
 
           <div class="cw-brand-text">
             <span class="cw-brand-title">Cardinal Landscaping</span>
@@ -181,7 +181,7 @@ function renderSiteFooter() {
 
         <div class="d-flex align-items-center gap-3 text-center text-lg-start">
           <img
-            src="images/"
+            src="images/cardinal_logo.png"
             alt="Cardinal Landscaping logo"
             style="height:72px;width:auto;max-width:180px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35));"
           >
