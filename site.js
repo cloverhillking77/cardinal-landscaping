@@ -187,7 +187,7 @@ function renderSiteFooter() {
           >
 
           <div>
-            <div class="fw-semibold text-white">Cardinal Windows</div>
+            <div class="fw-semibold text-white">Cardinal Landscaping</div>
             <div class="small">Landscaping • Tree Removal • Patio</div>
             <div class="small">Knoxville, Tennessee</div>
           </div>
@@ -223,7 +223,7 @@ function renderSiteFooter() {
           </div>
 
           <div class="small">(865)297-8983</div>
-          <div class="small mt-1">© <span id="year"></span> Cardinal Lnadscaping</div>
+          <div class="small mt-1">© <span id="year"></span> Cardinal Landscaping</div>
         </div>
 
       </div>
