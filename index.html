@@ -192,10 +192,85 @@
     .promise strong { display: block; font-size: 1.35rem; color: var(--red); }
     .promise span { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
 
-    .review { padding: 120px 0; text-align: center; background: var(--paper); }
-    .stars { color: var(--red); letter-spacing: .2em; }
-    blockquote { max-width: 940px; margin: 30px auto; font-family: "Playfair Display", serif; font-size: clamp(2rem, 4vw, 3.8rem); line-height: 1.17; }
-    .review cite { font-style: normal; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .reviews {
+      padding: 120px 0;
+      color: #fff;
+      background: #101712;
+    }
+    .reviews-head {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 65px;
+    }
+    .reviews-head h2 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+    .reviews-summary {
+      padding-left: 35px;
+      border-left: 1px solid rgba(255,255,255,.22);
+    }
+    .reviews-summary p { margin: 16px 0 24px; color: rgba(255,255,255,.65); }
+    .google-rating { display: flex; align-items: baseline; gap: 14px; }
+    .google-rating strong { font-family: "Playfair Display", serif; font-size: 2.4rem; font-weight: 500; }
+    .review-stars { color: #d9b978; letter-spacing: .14em; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 70px;
+      border-top: 1px solid rgba(255,255,255,.22);
+      border-bottom: 1px solid rgba(255,255,255,.22);
+    }
+    .featured-review {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 520px;
+      padding: 55px 55px 55px 0;
+      border-right: 1px solid rgba(255,255,255,.22);
+    }
+    .featured-review blockquote {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.25rem, 4vw, 4rem);
+      line-height: 1.14;
+    }
+    .review-source {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-top: 45px;
+    }
+    .review-author strong { display: block; font-size: 1rem; }
+    .review-author span {
+      color: rgba(255,255,255,.5);
+      font-size: .7rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .supporting-reviews { display: grid; }
+    .supporting-review {
+      padding: 34px 0;
+      border-bottom: 1px solid rgba(255,255,255,.18);
+    }
+    .supporting-review:last-child { border-bottom: 0; }
+    .supporting-review p { margin: 13px 0 20px; color: rgba(255,255,255,.72); font-size: 1rem; }
+    .supporting-review .review-source { margin-top: 0; }
+    .reviews-action {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+      padding-top: 42px;
+    }
+    .reviews-action p { max-width: 620px; margin: 0; color: rgba(255,255,255,.58); }
+    .reviews-action .button { flex-shrink: 0; }
 
     .faq { padding: 110px 0; background: var(--cream); }
     .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 90px; }
@@ -241,7 +316,7 @@
       .service-submenu { position: static; display: none; width: 100%; visibility: visible; opacity: 1; transform: none; box-shadow: none; margin-top: 4px; }
       .service-menu.open .service-submenu { display: block; }
       .hero { min-height: 760px; }
-      .intro-grid, .faq-grid { grid-template-columns: 1fr; gap: 35px; }
+      .intro-grid, .faq-grid, .reviews-head { grid-template-columns: 1fr; gap: 35px; }
       .intro-copy { margin: 0; }
       .project-card, .project-card.wide { min-height: 520px; }
       .section-head { display: block; }
@@ -250,6 +325,9 @@
       .service p { grid-column: 2; }
       .story { grid-template-columns: 1fr; }
       .story-image { height: 520px; }
+      .reviews-summary { padding: 28px 0 0; border-top: 1px solid rgba(255,255,255,.22); border-left: 0; }
+      .reviews-grid { grid-template-columns: 1fr; gap: 0; }
+      .featured-review { min-height: auto; padding: 50px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.22); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
@@ -261,7 +339,7 @@
       .hero-content { padding: 170px 0 60px; }
       .hero h1 { font-size: clamp(3rem, 15vw, 4.5rem); }
       .hero-foot { flex-direction: column; gap: 8px; }
-      .intro, .services, .review, .faq { padding: 80px 0; }
+      .intro, .services, .reviews, .faq { padding: 80px 0; }
       .project-grid { grid-template-columns: 1fr; }
       .project-card.wide { grid-column: auto; }
       .project-card, .project-card.wide { min-height: 470px; }
@@ -270,68 +348,11 @@
       .story-image { height: 390px; }
       .story-copy { padding: 70px 24px; }
       .promise { grid-template-columns: 1fr; background: transparent; }
+      .featured-review blockquote { font-size: 2rem; }
+      .review-source, .reviews-action { align-items: flex-start; flex-direction: column; }
+      .reviews-action .button { width: 100%; }
       .footer-grid { grid-template-columns: 1fr; gap: 35px; }
       .copyright { flex-direction: column; }
-    }
-
-    .reviews-section {
-      background: linear-gradient(135deg, #7a1024, #c41e3a);
-    }
-
-    .review-card {
-      max-width: 700px;
-      border: 0;
-      border-radius: 1.25rem;
-      box-shadow: 0 1rem 2rem rgba(0,0,0,.18);
-    }
-
-    .review-stars {
-      color: #ffc107;
-      letter-spacing: .08em;
-    }
-    .reviews-showcase {
-      background: #f7f3ec;
-    }
-
-    .google-reviews-box {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 15px 40px rgba(0,0,0,.08);
-    }
-
-    .review-mini-card {
-      background: #fafafa;
-      border-left: 4px solid #C41E3A;
-      border-radius: 12px;
-      padding: 24px;
-      height: 100%;
-    }
-
-    .review-mini-card strong {
-      color: #1f2937;
-      font-size: 1.15rem;
-    }
-
-    .stars {
-      color: #f59e0b;
-      letter-spacing: 2px;
-    }
-
-    .quote-mark {
-      color: #C41E3A;
-    }
-
-    .btn-cardinal {
-      background: #C41E3A;
-      border-color: #C41E3A;
-      color: white;
-    }
-
-    .btn-cardinal:hover {
-      background: #9f1730;
-      border-color: #9f1730;
-      color: white;
     }
   </style>
   <script type="application/ld+json">
@@ -457,117 +478,57 @@
       </div>
     </section>
 
-    <section id="reviews" class="py-5 reviews-section">
-      <div class="container text-center">
-        <p class="eyebrow mb-2">Google Reviews</p>
-        <h2 class="fw-bold mb-3 text-white">What Customers Say About Cardinal Landscaping</h2>
-        <p class="text-white-50 mb-4">
-          See why local homeowners trust Cardinal Landscaping for outdoor projects.
-        </p>
-
-        <div id="googleReviewCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-
-            <div class="carousel-item active">
-              <div class="row g-4">
-
-                <div class="col-md-4">
-                  <div class="review-mini-card">
-                    <strong>Mike Jones</strong>
-                    <small>Google Review • ★★★★★</small>
-
-                    <p>
-                      Thomas and his crew are fantastic. Their work is spot on and their
-                      knowledge of plants is extremely valuable. The team added extra
-                      touches that went beyond expectations.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="review-mini-card">
-                    <strong>Angelina Matías</strong>
-                    <small>Google Review • ★★★★★</small>
-
-                    <p>
-                      Cardinal Landscaping has maintained several properties for me over
-                      the years. Great communication, fair pricing, and consistently
-                      excellent work.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="review-mini-card">
-                    <strong>Danielle Wright</strong>
-                    <small>Google Review • ★★★★★</small>
-
-                    <p>
-                      Very pleased with the landscaping work. The team was prompt,
-                      professional, and transformed the space beautifully.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="carousel-item">
-              <div class="row justify-content-center">
-
-                <div class="col-md-6">
-                  <div class="review-mini-card">
-                    <strong>Suzette Larson</strong>
-                    <small>Google Review • ★★★★★</small>
-
-                    <p>
-                      Thomas listened carefully to what I wanted and offered helpful
-                      suggestions. The project was completed with care and attention to
-                      detail, and I was completely satisfied before payment.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="google-summary-card">
-                    <h4 class="mb-3">Cardinal Landscaping</h4>
-
-                    <div class="rating-display">
-                      <span class="review-score">5.0</span>
-                      <span class="stars">★★★★★</span>
-                    </div>
-
-                    <p class="mb-4">
-                      Trusted by Knoxville homeowners for landscaping, tree removal,
-                      hardscaping, patios, and planting services.
-                    </p>
-
-                    <a href="YOUR_GOOGLE_REVIEW_LINK"
-                       target="_blank"
-                       class="btn btn-cardinal">
-                      Read More Reviews
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+    <section id="reviews" class="reviews">
+      <div class="shell">
+        <div class="reviews-head">
+          <div>
+            <p class="eyebrow">Words from our customers</p>
+            <h2 class="serif">Good work leaves a lasting impression.</h2>
           </div>
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#googleReviewCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-
-          <button class="carousel-control-next" type="button" data-bs-target="#googleReviewCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <div class="reviews-summary">
+            <div class="google-rating">
+              <strong>5.0</strong>
+              <span class="review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+            <p>Local homeowners share their experience working with the Cardinal Landscaping crew.</p>
+          </div>
         </div>
 
-        <a class="btn btn-light btn-lg mt-4 fw-semibold" href="https://www.google.com/search?sca_esv=bcc915fd4b92abab&sxsrf=ANbL-n54eHVWfP9sGRJ-cE6kNIElUN84Mg:1781014894088&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOSgO477o3-Ii9t0udDNcyqRlBuNOlYjus_pP6kYAhG7g-C-F0Edssv0-85lbDfbsb1hWvuiUj96qMONciXMpHEipxSlQDZQsmqDf30_pClcH-70ucwwAP6_iLDpsKK8_2jspi-0%3D&q=Cardinal+Landscaping+and+Tree+Service+Reviews&sa=X&ved=2ahUKEwjp-ufArfqUAxVp4MkDHUTMCWUQ0bkNegQIOhAF&biw=1889&bih=934&dpr=1" target="_blank" rel="noopener">
-          Read More Reviews on Google
-        </a>
+        <div class="reviews-grid">
+          <article class="featured-review">
+            <blockquote>“Thomas listened carefully to what I wanted and offered helpful suggestions. The project was completed with care and attention to detail, and I was completely satisfied before payment.”</blockquote>
+            <div class="review-source">
+              <div class="review-author">
+                <strong>Suzette Larson</strong>
+                <span>Google review</span>
+              </div>
+              <span class="review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+          </article>
+
+          <div class="supporting-reviews">
+            <article class="supporting-review">
+              <span class="review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <p>“Thomas and his crew are fantastic. Their work is spot on and their knowledge of plants is extremely valuable. The team added extra touches that went beyond expectations.”</p>
+              <div class="review-author"><strong>Mike Jones</strong><span>Google review</span></div>
+            </article>
+            <article class="supporting-review">
+              <span class="review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <p>“Great communication, fair pricing, and consistently excellent work across several properties over the years.”</p>
+              <div class="review-author"><strong>Angelina Matías</strong><span>Google review</span></div>
+            </article>
+            <article class="supporting-review">
+              <span class="review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <p>“The team was prompt, professional, and transformed the space beautifully.”</p>
+              <div class="review-author"><strong>Danielle Wright</strong><span>Google review</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="reviews-action">
+          <p>Considering a project of your own? Read more customer experiences, or tell us what you would like to improve.</p>
+          <a class="button" href="https://www.google.com/search?sca_esv=bcc915fd4b92abab&amp;sxsrf=ANbL-n54eHVWfP9sGRJ-cE6kNIElUN84Mg:1781014894088&amp;si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOSgO477o3-Ii9t0udDNcyqRlBuNOlYjus_pP6kYAhG7g-C-F0Edssv0-85lbDfbsb1hWvuiUj96qMONciXMpHEipxSlQDZQsmqDf30_pClcH-70ucwwAP6_iLDpsKK8_2jspi-0%3D&amp;q=Cardinal+Landscaping+and+Tree+Service+Reviews&amp;sa=X&amp;ved=2ahUKEwjp-ufArfqUAxVp4MkDHUTMCWUQ0bkNegQIOhAF&amp;biw=1889&amp;bih=934&amp;dpr=1" target="_blank" rel="noopener">Read Reviews on Google →</a>
+        </div>
       </div>
     </section>
 
