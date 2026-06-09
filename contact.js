@@ -68,8 +68,12 @@ contactForm?.addEventListener('submit', async (event) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
-
-    if (!response.ok) throw new Error('Your request could not be sent. Please call us instead.');
+    
+if (!response.ok) {
+  const errorText = await response.text();
+  throw new Error(errorText || 'Your request could not be sent. Please call us instead.');
+}
+    // if (!response.ok) throw new Error('Your request could not be sent. Please call us instead.');
 
     contactForm.reset();
     showFormStatus('Thanks! We received your request and will contact you as soon as possible.', 'success');
