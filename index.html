@@ -289,6 +289,50 @@
       color: #ffc107;
       letter-spacing: .08em;
     }
+    .reviews-showcase {
+      background: #f7f3ec;
+    }
+
+    .google-reviews-box {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.08);
+    }
+
+    .review-mini-card {
+      background: #fafafa;
+      border-left: 4px solid #C41E3A;
+      border-radius: 12px;
+      padding: 24px;
+      height: 100%;
+    }
+
+    .review-mini-card strong {
+      color: #1f2937;
+      font-size: 1.15rem;
+    }
+
+    .stars {
+      color: #f59e0b;
+      letter-spacing: 2px;
+    }
+
+    .quote-mark {
+      color: #C41E3A;
+    }
+
+    .btn-cardinal {
+      background: #C41E3A;
+      border-color: #C41E3A;
+      color: white;
+    }
+
+    .btn-cardinal:hover {
+      background: #9f1730;
+      border-color: #9f1730;
+      color: white;
+    }
   </style>
   <script type="application/ld+json">
     {
@@ -425,41 +469,89 @@
           <div class="carousel-inner">
 
             <div class="carousel-item active">
-              <div class="card review-card mx-auto">
-                <div class="card-body p-4">
-                  <div class="review-stars fs-4 mb-2">★★★★★</div>
-                  <p class="text-body-secondary mb-3">
-                    Add a real Google review here.
-                  </p>
-                  <strong>Google Reviewer</strong>
+              <div class="row g-4">
+
+                <div class="col-md-4">
+                  <div class="review-mini-card">
+                    <strong>Mike Jones</strong>
+                    <small>Google Review • ★★★★★</small>
+
+                    <p>
+                      Thomas and his crew are fantastic. Their work is spot on and their
+                      knowledge of plants is extremely valuable. The team added extra
+                      touches that went beyond expectations.
+                    </p>
+                  </div>
                 </div>
+
+                <div class="col-md-4">
+                  <div class="review-mini-card">
+                    <strong>Angelina Matías</strong>
+                    <small>Google Review • ★★★★★</small>
+
+                    <p>
+                      Cardinal Landscaping has maintained several properties for me over
+                      the years. Great communication, fair pricing, and consistently
+                      excellent work.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="review-mini-card">
+                    <strong>Danielle Wright</strong>
+                    <small>Google Review • ★★★★★</small>
+
+                    <p>
+                      Very pleased with the landscaping work. The team was prompt,
+                      professional, and transformed the space beautifully.
+                    </p>
+                  </div>
+                </div>
+
               </div>
             </div>
 
             <div class="carousel-item">
-              <div class="card review-card mx-auto">
-                <div class="card-body p-4">
-                  <div class="review-stars fs-4 mb-2">★★★★★</div>
-                  <p class="text-body-secondary mb-3">
-                    Add another real Google review here.
-                  </p>
-                  <strong>Google Reviewer</strong>
+              <div class="row justify-content-center">
+
+                <div class="col-md-6">
+                  <div class="review-mini-card">
+                    <strong>Suzette Larson</strong>
+                    <small>Google Review • ★★★★★</small>
+
+                    <p>
+                      Thomas listened carefully to what I wanted and offered helpful
+                      suggestions. The project was completed with care and attention to
+                      detail, and I was completely satisfied before payment.
+                    </p>
+                  </div>
                 </div>
+
+                <div class="col-md-6">
+                  <div class="google-summary-card">
+                    <h4 class="mb-3">Cardinal Landscaping</h4>
+
+                    <div class="rating-display">
+                      <span class="review-score">5.0</span>
+                      <span class="stars">★★★★★</span>
+                    </div>
+
+                    <p class="mb-4">
+                      Trusted by Knoxville homeowners for landscaping, tree removal,
+                      hardscaping, patios, and planting services.
+                    </p>
+
+                    <a href="YOUR_GOOGLE_REVIEW_LINK"
+                       target="_blank"
+                       class="btn btn-cardinal">
+                      Read More Reviews
+                    </a>
+                  </div>
+                </div>
+
               </div>
             </div>
-
-            <div class="carousel-item">
-              <div class="card review-card mx-auto">
-                <div class="card-body p-4">
-                  <div class="review-stars fs-4 mb-2">★★★★★</div>
-                  <p class="text-body-secondary mb-3">
-                    Add another real Google review here.
-                  </p>
-                  <strong>Google Reviewer</strong>
-                </div>
-              </div>
-            </div>
-
           </div>
 
           <button class="carousel-control-prev" type="button" data-bs-target="#googleReviewCarousel" data-bs-slide="prev">
