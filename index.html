@@ -273,6 +273,22 @@
       .footer-grid { grid-template-columns: 1fr; gap: 35px; }
       .copyright { flex-direction: column; }
     }
+
+    .reviews-section {
+      background: linear-gradient(135deg, #7a1024, #c41e3a);
+    }
+
+    .review-card {
+      max-width: 700px;
+      border: 0;
+      border-radius: 1.25rem;
+      box-shadow: 0 1rem 2rem rgba(0,0,0,.18);
+    }
+
+    .review-stars {
+      color: #ffc107;
+      letter-spacing: .08em;
+    }
   </style>
   <script type="application/ld+json">
     {
@@ -397,11 +413,69 @@
       </div>
     </section>
 
-    <section class="review">
-      <div class="shell">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote>“Reliable, hardworking, and the finished yard looked better than we imagined.”</blockquote>
-        <cite>Cardinal Landscaping customer · Knoxville, TN</cite>
+    <section id="reviews" class="py-5 reviews-section">
+      <div class="container text-center">
+        <p class="eyebrow mb-2">Google Reviews</p>
+        <h2 class="fw-bold mb-3 text-white">What Customers Say About Cardinal Landscaping</h2>
+        <p class="text-white-50 mb-4">
+          See why local homeowners trust Cardinal Landscaping for outdoor projects.
+        </p>
+
+        <div id="googleReviewCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <div class="card review-card mx-auto">
+                <div class="card-body p-4">
+                  <div class="review-stars fs-4 mb-2">★★★★★</div>
+                  <p class="text-body-secondary mb-3">
+                    Add a real Google review here.
+                  </p>
+                  <strong>Google Reviewer</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="card review-card mx-auto">
+                <div class="card-body p-4">
+                  <div class="review-stars fs-4 mb-2">★★★★★</div>
+                  <p class="text-body-secondary mb-3">
+                    Add another real Google review here.
+                  </p>
+                  <strong>Google Reviewer</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="card review-card mx-auto">
+                <div class="card-body p-4">
+                  <div class="review-stars fs-4 mb-2">★★★★★</div>
+                  <p class="text-body-secondary mb-3">
+                    Add another real Google review here.
+                  </p>
+                  <strong>Google Reviewer</strong>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#googleReviewCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+
+          <button class="carousel-control-next" type="button" data-bs-target="#googleReviewCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <a class="btn btn-light btn-lg mt-4 fw-semibold" href="https://www.google.com/search?sca_esv=bcc915fd4b92abab&sxsrf=ANbL-n54eHVWfP9sGRJ-cE6kNIElUN84Mg:1781014894088&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOSgO477o3-Ii9t0udDNcyqRlBuNOlYjus_pP6kYAhG7g-C-F0Edssv0-85lbDfbsb1hWvuiUj96qMONciXMpHEipxSlQDZQsmqDf30_pClcH-70ucwwAP6_iLDpsKK8_2jspi-0%3D&q=Cardinal+Landscaping+and+Tree+Service+Reviews&sa=X&ved=2ahUKEwjp-ufArfqUAxVp4MkDHUTMCWUQ0bkNegQIOhAF&biw=1889&bih=934&dpr=1" target="_blank" rel="noopener">
+          Read More Reviews on Google
+        </a>
       </div>
     </section>
 
