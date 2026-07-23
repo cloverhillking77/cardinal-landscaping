@@ -74,7 +74,11 @@ if (!response.ok) {
   throw new Error(errorText || 'Your request could not be sent. Please call us instead.');
 }
     // if (!response.ok) throw new Error('Your request could not be sent. Please call us instead.');
-
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      send_to: 'AW-17336785310/EsW8CLDHjdUcEJ6z6cpA'
+    });
+  }
     contactForm.reset();
     showFormStatus('Thanks! We received your request and will contact you as soon as possible.', 'success');
   } catch (error) {
