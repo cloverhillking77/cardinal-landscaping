@@ -17,27 +17,55 @@ function showFormStatus(message, type) {
   formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const result = String(reader.result || '');
-      resolve(result.split(',')[1] || '');
-    };
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
+function addHiddenField(name, value) {
+  let input = contactForm.querySelector(`input[name="${name}"]`);
+  if (!input) {
+    input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    contactForm.appendChild(input);
+  }
+  input.value = value;
 }
 
-contactForm?.addEventListener('submit', async (event) => {
+const submitted = new URLSearchParams(window.location.search).get('submitted');
+if (submitted === '1') {
+  showFormStatus('Thanks! We received your request and will contact you as soon as possible.', 'success');
+  history.replaceState({}, '', 'contact.html');
+}
+
+contactForm?.addEventListener('submit', (event) => {
   event.preventDefault();
+  event.stopImmediatePropagation();
 
   if (!contactForm.reportValidity()) return;
 
-  const endpoint = contactForm.dataset.endpoint?.trim();
-  if (!endpoint) {
-    showFormStatus('The form is ready, but the Make webhook URL still needs to be connected.', 'error');
+  const photo = document.getElementById('projectPhoto')?.files?.[0];
+  if (photo && photo.size > maxUploadSize) {
+    showFormStatus('Please upload an image smaller than 5MB.', 'error');
     return;
+  }
+
+  const photoInput = document.getElementById('projectPhoto');
+  if (photoInput) photoInput.name = 'attachment';
+
+  contactForm.action = 'https://formsubmit.co/rockytopdevshop@gmail.com';
+  contactForm.method = 'POST';
+  contactForm.enctype = 'multipart/form-data';
+
+  addHiddenField('_subject', 'New Cardinal Landscaping estimate request');
+  addHiddenField('_template', 'table');
+  addHiddenField('_captcha', 'false');
+  addHiddenField('_next', 'https://cardinaltreeserviceknox.com/contact.html?submitted=1');
+  addHiddenField('_url', 'https://cardinaltreeserviceknox.com/contact.html');
+
+  const customerEmail = contactForm.querySelector('input[name="email"]')?.value?.trim();
+  if (customerEmail) addHiddenField('_replyto', customerEmail);
+
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      send_to: 'AW-17336785310/EsW8CLDHjdUcEJ6z6cpA'
+    });
   }
 
   formStatus.className = 'form-status';
@@ -45,46 +73,5 @@ contactForm?.addEventListener('submit', async (event) => {
   submitButton.disabled = true;
   submitButton.textContent = 'Sending...';
 
-  const data = Object.fromEntries(new FormData(contactForm).entries());
-  const photo = document.getElementById('projectPhoto')?.files?.[0];
-
-  try {
-    if (photo) {
-      if (photo.size > maxUploadSize) {
-        throw new Error('Please upload an image smaller than 5MB.');
-      }
-
-      data.attachment = {
-        filename: photo.name,
-        contentType: photo.type,
-        content: await fileToBase64(photo)
-      };
-    }
-
-    delete data.photo;
-
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    
-if (!response.ok) {
-  const errorText = await response.text();
-  throw new Error(errorText || 'Your request could not be sent. Please call us instead.');
-}
-    // if (!response.ok) throw new Error('Your request could not be sent. Please call us instead.');
-  if (typeof gtag === 'function') {
-    gtag('event', 'conversion', {
-      send_to: 'AW-17336785310/EsW8CLDHjdUcEJ6z6cpA'
-    });
-  }
-    contactForm.reset();
-    showFormStatus('Thanks! We received your request and will contact you as soon as possible.', 'success');
-  } catch (error) {
-    showFormStatus(error.message || 'Something went wrong. Please call us instead.', 'error');
-  } finally {
-    submitButton.disabled = false;
-    submitButton.textContent = 'Send Request →';
-  }
-});
+  HTMLFormElement.prototype.submit.call(contactForm);
+}, true);
