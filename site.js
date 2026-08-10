@@ -1,4 +1,6 @@
 const CARDINAL_GOOGLE_ADS_ID = 'AW-18376798236';
+const CARDINAL_PHONE_CONVERSION_ID = 'AW-18376798236/oHUWCMaBq98cEJzg3rpE';
+const CARDINAL_PHONE_NUMBER = '(865)297-8983';
 
 function initCardinalGoogleAdsTag() {
   if (window.__cardinalGoogleAdsInitialized) return;
@@ -8,6 +10,9 @@ function initCardinalGoogleAdsTag() {
   window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); };
   window.gtag('js', new Date());
   window.gtag('config', CARDINAL_GOOGLE_ADS_ID);
+  window.gtag('config', CARDINAL_PHONE_CONVERSION_ID, {
+    phone_conversion_number: CARDINAL_PHONE_NUMBER
+  });
 
   const hasGoogleTagLibrary = document.querySelector('script[src*="googletagmanager.com/gtag/js"]');
   if (!hasGoogleTagLibrary) {
