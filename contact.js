@@ -2,6 +2,7 @@ const contactForm = document.getElementById('contactForm');
 const submitButton = document.getElementById('submitBtn');
 const formStatus = document.getElementById('formStatus');
 const maxUploadSize = 5 * 1024 * 1024;
+const CARDINAL_CONTACT_CONVERSION = 'AW-18376798236/d2FcCM3wl98cEUzg3rpE';
 
 const requestedService = new URLSearchParams(window.location.search).get('service');
 const serviceSelect = document.getElementById('service');
@@ -31,6 +32,21 @@ function addHiddenField(name, value) {
 const submitted = new URLSearchParams(window.location.search).get('submitted');
 if (submitted === '1') {
   showFormStatus('Thanks! We received your request and will contact you as soon as possible.', 'success');
+
+  // Count the lead only after FormSubmit returns to the success URL.
+  // sessionStorage prevents a refresh/back-navigation from creating a duplicate conversion.
+  if (sessionStorage.getItem('cardinalLeadPending') === '1' && sessionStorage.getItem('cardinalLeadTracked') !== '1') {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', {
+        send_to: CARDINAL_CONTACT_CONVERSION,
+        value: 50.0,
+        currency: 'USD'
+      });
+      sessionStorage.setItem('cardinalLeadTracked', '1');
+    }
+    sessionStorage.removeItem('cardinalLeadPending');
+  }
+
   history.replaceState({}, '', 'contact.html');
 }
 
@@ -62,11 +78,9 @@ contactForm?.addEventListener('submit', (event) => {
   const customerEmail = contactForm.querySelector('input[name="email"]')?.value?.trim();
   if (customerEmail) addHiddenField('_replyto', customerEmail);
 
-  if (typeof gtag === 'function') {
-    gtag('event', 'conversion', {
-      send_to: 'AW-17336785310/EsW8CLDHjdUcEJ6z6cpA'
-    });
-  }
+  // Mark the form as pending. The conversion fires only after the successful return URL loads.
+  sessionStorage.setItem('cardinalLeadPending', '1');
+  sessionStorage.removeItem('cardinalLeadTracked');
 
   formStatus.className = 'form-status';
   formStatus.textContent = '';
