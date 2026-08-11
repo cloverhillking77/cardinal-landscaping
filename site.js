@@ -23,7 +23,35 @@ function initCardinalGoogleAdsTag() {
   }
 }
 
+function ensureResourcesNavigation() {
+  const navigation = document.querySelector('.nav-links');
+  if (!navigation) return;
+
+  const estimateLink = navigation.querySelector('.nav-call');
+  if (!estimateLink) return;
+
+  let faqLink = Array.from(navigation.querySelectorAll('a')).find(link => link.textContent.trim() === 'FAQs');
+  if (!faqLink) {
+    faqLink = document.createElement('a');
+    faqLink.href = 'index.html#faq';
+    faqLink.textContent = 'FAQs';
+    navigation.insertBefore(faqLink, estimateLink);
+  }
+
+  const existingResources = Array.from(navigation.querySelectorAll('a')).find(link => link.textContent.trim() === 'Resources');
+  if (!existingResources) {
+    const resourcesLink = document.createElement('a');
+    resourcesLink.href = 'resources.html';
+    resourcesLink.textContent = 'Resources';
+    if (document.body.dataset.page === 'resources' || document.body.dataset.page === 'resource-article') {
+      resourcesLink.setAttribute('aria-current', 'page');
+    }
+    navigation.insertBefore(resourcesLink, estimateLink);
+  }
+}
+
 initCardinalGoogleAdsTag();
+ensureResourcesNavigation();
 
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.nav-links');
