@@ -2,6 +2,17 @@ const CARDINAL_GOOGLE_ADS_ID = 'AW-18376798236';
 const CARDINAL_PHONE_CONVERSION_ID = 'AW-18376798236/oHUWCMaBq98cEJzg3rpE';
 const CARDINAL_PHONE_NUMBER = '(865)297-8983';
 
+function ensureCardinalFavicon() {
+  let favicon = document.querySelector('link[rel="icon"], link[rel="shortcut icon"]');
+  if (!favicon) {
+    favicon = document.createElement('link');
+    favicon.rel = 'icon';
+    document.head.appendChild(favicon);
+  }
+  favicon.type = 'image/png';
+  favicon.href = 'images/cardinal_logo.png';
+}
+
 function ensureCardinalGoogleTag() {
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); };
@@ -53,6 +64,7 @@ function ensureResourcesNavigation() {
   }
 }
 
+ensureCardinalFavicon();
 ensureCardinalGoogleTag();
 initCardinalPhoneConversion();
 ensureResourcesNavigation();
