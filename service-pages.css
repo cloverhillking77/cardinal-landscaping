@@ -160,7 +160,7 @@ details p { margin: -6px 45px 26px 0; color: #59635b; }
 
 footer { padding: 65px 0 30px; color: #fff; background: #101712; }
 .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 60px; padding-bottom: 55px; }
-.footer-logo { width: 100px; margin-bottom: 18px; }
+.footer-logo { display: block; width: 100px; height: auto; margin-bottom: 18px; }
 footer h3 { margin: 0 0 18px; font-family: "Playfair Display", serif; font-size: 1.4rem; }
 footer p, footer a { color: rgba(255,255,255,.65); }
 footer a { display: block; margin: 8px 0; text-decoration: none; }
